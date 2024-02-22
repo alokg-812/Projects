@@ -1,25 +1,26 @@
 #include <stdio.h>
-int is_ready(int x, int y) {
-    int lucky = 0, unlucky = 0;
-    if (y % 2 == 0) {
-        printf("lucky");
-        lucky = lucky + 1 ;
+char* is_ready_for_battle(int N, int weapons[]) {
+    int even_count = 0;
+    int odd_count = 0;
+    for (int i = 0; i < N; i++) {
+        if (weapons[i] % 2 == 0)
+            even_count++;
+        else
+            odd_count++;
     }
-    else printf("Unlucky");
-        unlucky = unlucky + 1 ;
-    if (lucky > unlucky) return lucky; 
-    else return unlucky;
+    if (even_count > odd_count)
+        return "READY FOR BATTLE";
+    else
+        return "NOT READY";
 }
-int main(void) {
-    int n; // n is the number of soldiers
-    int lucky = 0;
-    int unlucky = 0;
-    printf("n: ");
-    scanf("%d", &n);
-    for (int i = 0; i<n;i++) {
-        printf("Enter the number of weapons present in ith soldier: ");
-        scanf("%d",&i);
-        int battle_result = is_ready(n,i)        
+int main() {
+    int N;
+    scanf("%d", &N);
+    int weapons[N];
+    for (int i = 0; i < N; i++) {
+        scanf("%d", &weapons[i]);
     }
+    char* result = is_ready_for_battle(N, weapons);
+    printf("%s\n", result);
     return 0;
 }
