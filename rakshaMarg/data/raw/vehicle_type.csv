@@ -1,0 +1,8 @@
+vehicle_type,accidents,deaths,injuries
+Bus - Govt,1065,378,
+Bus - Private,1167,337,
+Truck/Lorry/HMV,3596,1238,
+Car/Jeep/Taxi/Van/LMV,9845,2060,
+Two-wheeler,15552,3725,
+Auto Rickshaw / 3-wheeler,1282,202,
+Others,2104,712,
